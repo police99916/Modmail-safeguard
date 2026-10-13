@@ -32,7 +32,8 @@ class Safeguard(commands.Cog):
 
             await ctx.channel.edit(
                 category=category,
-                reason=f"Safeguarded by {ctx.author}"
+                sync_permissions=True,
+                reason=f"🚨 Safeguarded by {ctx.author}"
             )
 
             embed = discord.Embed(
