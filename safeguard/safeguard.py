@@ -34,11 +34,20 @@ class Safeguard(commands.Cog):
             reason=f"Safeguarding escalation requested by {ctx.author}"
         )
 
-        await ctx.send(
-            f"🚨 **Ticket Escalated**\n"
-            f"{role.mention} — please review this ticket.",
-            allowed_mentions=discord.AllowedMentions(roles=True)
-        )
+embed = discord.Embed(
+    title="🚨 Ticket Escalated",
+    description=(
+        f"**Safeguarded by:** {ctx.author.mention}\n\n"
+        f"{role.mention} — please review this ticket."
+    ),
+    color=discord.Color.red()
+)
+
+await ctx.send(
+    embed=embed,
+    allowed_mentions=discord.AllowedMentions(roles=True)
+)
+
 
 
 async def setup(bot):
