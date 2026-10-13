@@ -36,11 +36,10 @@ class Safeguard(commands.Cog):
             )
 
             embed = discord.Embed(
-                title="🚨 Ticket Escalated",
+                title="🚨 Ticket Safeguarded",
                 description=(
                     f"**Safeguarded by:** {ctx.author.mention}\n"
-                    f"**Senior Staff:** {role.mention}\n\n"
-                    "Safeguarding, please review this ticket."
+                    f"{role.mention} please review this ticket."
                 ),
                 color=discord.Color.red()
             )
